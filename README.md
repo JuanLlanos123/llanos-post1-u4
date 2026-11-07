@@ -97,3 +97,12 @@ El patrón Template Method encajaría porque permite definir una estructura gene
 
 El patrón Memento sería apropiado porque permite guardar y restaurar instantáneas completas del estado de una solicitud sin exponer sus atributos internos al objeto encargado de conservarlas. A diferencia del mecanismo undo de la Necesidad 2, basado en deshacer operaciones ejecutadas mediante comandos, Memento permite recuperar un estado anterior completo, incluso sin tener que reconstruir las operaciones realizadas posteriormente.
 
+Parte 1: Command y Adapter.
+
+Aunque ambos patrones pueden intervenir en la ejecución de operaciones del sistema, Command encapsula una acción como un objeto independiente para controlar su ejecución, mientras que Adapter permite integrar componentes cuyas interfaces son incompatibles. Uno organiza la ejecución de solicitudes y el otro resuelve problemas de compatibilidad.
+
+Parte 2: Observer y State.
+
+Aunque ambos patrones pueden relacionarse con los cambios de estado de una solicitud, Observer permite que objetos externos reaccionen cuando ocurre una modificación, mientras que State determina cómo cambia el comportamiento de la propia solicitud dependiendo del estado en el que se encuentra.
+
+En conclusión, la selección de un patrón no debe basarse únicamente en que su estructura parezca coincidir con el problema. Es necesario identificar qué responsabilidad se busca resolver, comparar las alternativas disponibles y descartar aquellas que, aunque parezcan similares, no solucionan el síntoma de diseño concreto. De esta manera, se evita implementar patrones innecesarios y se obtiene una solución mejor justificada desde el punto de vista técnico.
