@@ -37,7 +37,15 @@ public class Invoker {
         // 4) Generar orden de compra
         Ejecucion orden = new OrdenCommand();
         orden.ejecutar(solicitud);
-        solicitud.setEstado("EJECUTADA");
+        String resultado = solicitud.ejecutar();
+        if (!"Ejecutada".equals(resultado)) {
+            orden.deshacer(solicitud);
+            presupuesto.deshacer(solicitud);
+            pila.pop();
+            solicitudesProcesadas.remove(solicitud.getId());
+            System.out.println(resultado);
+            return;
+        }
         pila.push(new SolicitudEjecucion(solicitud, orden));
     }
 
